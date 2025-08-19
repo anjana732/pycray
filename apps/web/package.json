@@ -2,8 +2,8 @@
   "name": "web",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 3001 --turbopack",
-    "build": "next build",
+   "dev": "basehub dev & next dev",
+    "build": "basehub && next build",
     "start": "next start",
     "analyze": "ANALYZE=true npm run build",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
@@ -24,6 +24,7 @@
     "@repo/seo": "workspace:*",
     "@sentry/nextjs": "^9.22.0",
     "@t3-oss/env-nextjs": "^0.13.4",
+    "basehub": "^8.2.7",
     "date-fns": "^4.1.0",
     "fumadocs-core": "^15.4.0",
     "import-in-the-middle": "^1.13.2",
