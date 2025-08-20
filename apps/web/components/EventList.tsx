@@ -1,156 +1,3 @@
-// "use client";
-
-// import { useEventStore } from "../store/eventStore";
-
-// export default function EventList({ search }: { search: string }) {
-//   const { events, removeEvent } = useEventStore();
-
-//   const filteredEvents = events.filter((event) =>
-//     event.name.toLowerCase().includes(search.toLowerCase())
-//   );
-
-//   if (filteredEvents.length === 0) {
-//     return <p className="text-gray-500 text-center mt-4">No events yet</p>;
-//   }
-
-//   return (
-//     <div className="w-full max-w-md mt-6 space-y-3">
-//       {filteredEvents.map((event, index) => (
-//         <div
-//           key={index}
-//           className="flex justify-between items-center bg-white p-4 rounded-lg shadow-sm"
-//         >
-//           <div>
-//             <p className="font-medium">{event.name}</p>
-//             <p className="text-sm text-gray-500">{event.date}</p>
-//           </div>
-//           <button
-//             onClick={() => removeEvent(index)}
-//             className="text-red-500 hover:text-red-700 font-semibold"
-//           >
-//             Delete
-//           </button>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-
-// "use client";
-
-// import { useEventStore } from "../store/eventStore";
-
-// export default function EventList({ search }: { search: string }) {
-//   const { events, removeEvent } = useEventStore();
-
-//   const filteredEvents = events.filter((event) =>
-//     event.name.toLowerCase().includes(search.toLowerCase())
-//   );
-
-//   if (filteredEvents.length === 0) {
-//     return <p className="text-gray-500 text-center mt-6 italic">No events yet 🚀</p>;
-//   }
-
-//   return (
-//     <div className="w-full max-w-md mt-6 space-y-4">
-//       {filteredEvents.map((event, index) => (
-//         <div
-//           key={index}
-//           className="flex justify-between items-center bg-white/90 backdrop-blur rounded-xl shadow-md p-4 border border-gray-200 hover:shadow-lg transition-all duration-200"
-//         >
-//           <div>
-//             <p className="font-semibold text-gray-800">{event.name}</p>
-//             <p className="text-sm text-gray-500">{event.date}</p>
-//           </div>
-//           <button
-//             onClick={() => removeEvent(index)}
-//             className="text-red-500 hover:text-red-700 font-semibold transition"
-//           >
-//             ✖
-//           </button>
-//         </div>
-//       ))}
-//     </div>
-//   );
-// }
-
-
-// "use client";
-// import { useEffect, useState } from "react";
-// import Lottie from "lottie-react";
-// import { Trash2, Search, XCircle } from "lucide-react";
-
-
-// export default function EventList({ events, setEvents }: { events: string[], setEvents: (ev: string[]) => void }) {
-//   const [search, setSearch] = useState("");
-
-//   useEffect(() => {
-//     localStorage.setItem("events", JSON.stringify(events));
-//   }, [events]);
-
-//   const filtered = events.filter((e) => e.toLowerCase().includes(search.toLowerCase()));
-
-//   const clearStorage = () => {
-//     localStorage.removeItem("events");
-//     setEvents([]);
-//   };
-
-//   return (
-//     <div className="flex flex-col gap-4 bg-gray-900 border border-gray-700 p-6 rounded-2xl shadow-lg">
-//       <h2 className="text-xl font-semibold text-cyan-400">Event List</h2>
-
-//       <div className="flex items-center gap-2 bg-gray-800 rounded-lg px-3 py-2 border border-gray-600">
-//         <Search className="text-gray-400 w-4 h-4" />
-//         <input
-//           type="text"
-//           value={search}
-//           onChange={(e) => setSearch(e.target.value)}
-//           placeholder="Search event..."
-//           className="bg-transparent w-full text-gray-200 focus:outline-none"
-//         />
-//         {search && (
-//           <XCircle
-//             className="w-4 h-4 text-gray-400 cursor-pointer hover:text-red-400"
-//             onClick={() => setSearch("")}
-//           />
-//         )}
-//       </div>
-
-//       {filtered.length === 0 ? (
-//         <div className="flex flex-col items-center justify-center text-gray-400 py-6">
-          
-//           <p>No events found</p>
-//           <Lottie animationData={require("/public/empty.json")} loop={true} />
-//         </div>
-//       ) : (
-//         <ul className="flex flex-col gap-2">
-//           {filtered.map((e, idx) => (
-//             <li
-//               key={idx}
-//               className="flex justify-between items-center bg-gray-800 border border-gray-600 rounded-lg px-3 py-2 text-gray-200"
-//             >
-//               {e}
-//               <Trash2
-//                 className="w-5 h-5 text-red-400 cursor-pointer hover:text-red-500"
-//                 onClick={() => setEvents(events.filter((_, i) => i !== idx))}
-//               />
-//             </li>
-//           ))}
-//         </ul>
-//       )}
-
-//       <button
-//         onClick={clearStorage}
-//         className="mt-2 bg-red-500 hover:bg-red-600 text-white rounded-lg px-4 py-2 font-medium transition"
-//       >
-//         Clear Storage
-//       </button>
-//     </div>
-//   );
-// }
-
-// apps/web/components/EventList.tsx
 "use client";
 
 import React, { useEffect, useState } from "react";
@@ -158,15 +5,6 @@ import { useEventStore } from "@/store/eventStore";
 import { Trash2, Search, X } from "lucide-react";
 import Lottie from "lottie-react";
 
-/**
- * This component preserves all behaviour:
- *  - reads events from the Zustand store
- *  - supports search
- *  - remove (by id)
- *  - clearEvents -> clears the store (and localStorage via persist)
- *
- * It only adjusts styling / UX.
- */
 
 export default function EventList() {
   const events = useEventStore((s) => s.events);
@@ -176,9 +14,8 @@ export default function EventList() {
   const [search, setSearch] = useState("");
   const [animData, setAnimData] = useState<any>(null);
 
-  // load public Lottie JSON at runtime (place file at apps/web/public/animations/empty.json)
   useEffect(() => {
-    fetch("/animations/empty.json")
+    fetch("/public/empty.json")
       .then((r) => r.json())
       .then((d) => setAnimData(d))
       .catch(() => setAnimData(null));
