@@ -150,3 +150,5 @@ Navigate to: `http://localhost:3000/events`
 ## 📜 License
 
 MIT © 2025 Anjana Kumari
+Email: anjanasingh1257@gmail.com
+Portfolio : [Click to visit Portfolio](https://nextjs-portfolio-rosy-six.vercel.app/)
