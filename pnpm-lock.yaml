@@ -677,8 +677,8 @@ importers:
         specifier: 6.4.1
         version: 6.4.1(@neondatabase/serverless@1.0.1)
       '@prisma/client':
-        specifier: 6.4.1
-        version: 6.4.1(prisma@6.14.0(typescript@5.9.2))(typescript@5.9.2)
+        specifier: 6.14.0
+        version: 6.14.0(prisma@6.14.0(typescript@5.9.2))(typescript@5.9.2)
       '@t3-oss/env-nextjs':
         specifier: ^0.13.4
         version: 0.13.8(arktype@2.1.20)(typescript@5.9.2)(zod@3.25.76)
@@ -3503,8 +3503,8 @@ packages:
     peerDependencies:
       '@neondatabase/serverless': ^0.6.0 || ^0.7.0 || ^0.8.0 || ^0.9.0 || ^0.10.0
 
-  '@prisma/client@6.4.1':
-    resolution: {integrity: sha512-A7Mwx44+GVZVexT5e2GF/WcKkEkNNKbgr059xpr5mn+oUm2ZW1svhe+0TRNBwCdzhfIZ+q23jEgsNPvKD9u+6g==}
+  '@prisma/client@6.14.0':
+    resolution: {integrity: sha512-8E/Nk3eL5g7RQIg/LUj1ICyDmhD053STjxrPxUtCRybs2s/2sOEcx9NpITuAOPn07HEpWBfhAVe1T/HYWXUPOw==}
     engines: {node: '>=18.18'}
     peerDependencies:
       prisma: '*'
@@ -13972,7 +13972,7 @@ snapshots:
       '@prisma/driver-adapter-utils': 6.4.1
       postgres-array: 3.0.2
 
-  '@prisma/client@6.4.1(prisma@6.14.0(typescript@5.9.2))(typescript@5.9.2)':
+  '@prisma/client@6.14.0(prisma@6.14.0(typescript@5.9.2))(typescript@5.9.2)':
     optionalDependencies:
       prisma: 6.14.0(typescript@5.9.2)
       typescript: 5.9.2
