@@ -1,25 +1,24 @@
-import {create} from 'zustand';
+import { create } from "zustand";
 
-type Event = {
-    id: number,
-    name: string,
-    date: string
-}
+export type EventItem = {
+  name: string;
+  date: string;
+};
 
-type EventState = {
-    events: Event[];
-    addEvent : (name: string, date: string ) => void;
-    deleteEvent : (id: number) => void;
-}
+type EventStore = {
+  events: EventItem[];
+  addEvent: (event: EventItem) => void;
+  removeEvent: (index: number) => void;
+  setEvents: (events: EventItem[]) => void;
+};
 
-export const useEventStore = create<EventState>((set) => ({
+export const useEventStore = create<EventStore>((set) => ({
   events: [],
-  addEvent: (name, date) =>
+  addEvent: (event) =>
+    set((state) => ({ events: [...state.events, event] })),
+  removeEvent: (index) =>
     set((state) => ({
-      events: [...state.events, { id: Date.now(), name, date }],
+      events: state.events.filter((_, i) => i !== index),
     })),
-  deleteEvent: (id) =>
-    set((state) => ({
-      events: state.events.filter((event) => event.id !== id),
-    })),
+  setEvents: (events) => set({ events }),
 }));
