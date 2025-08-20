@@ -1,30 +1,4 @@
-# Event Manager — Professional Dark Theme (Next-Forge / Next.js App Router)
-
-A detailed README describing how to run, understand, and extend the **Event Manager** built inside a **Next-Forge monorepo**.  
-This project demonstrates state management with **Zustand + persist**, client-only storage, and a professional dark-themed UI.
-
----
-
-## Table of Contents
-- [Project summary](#project-summary)
-- [What’s included / Features](#whats-included--features)
-- [Tech stack](#tech-stack)
-- [Assumptions & notes about structure](#assumptions--notes-about-structure)
-- [Prerequisites](#prerequisites)
-- [Install & run (step-by-step)](#install--run-step-by-step)
-- [Files & folders — explanation (what-why)](#files--folders---explanation-what-why)
-- [Lottie animation: where to put it and how to use it](#lottie-animation-where-to-put-it-and-how-to-use-it)
-- [TypeScript declaration for lottie-react (if needed)](#typescript-declaration-for-lottie-react-if-needed)
-- [UUID — installing or using native crypto.randomUUID()](#uuid---installing-or-using-native-cryptrandomuuid)
-- [How the store / form / list work (detailed flow)](#how-the-store--form--list-work-detailed-flow)
-- [Acceptance checklist (mapping to assignment)](#acceptance-checklist-mapping-to-assignment)
-- [Troubleshooting & common errors](#troubleshooting--common-errors)
-- [How to take a screenshot & include it for submission](#how-to-take-a-screenshot--include-it-for-submission)
-- [Recommended Git commits / branch naming](#recommended-git-commits--branch-naming)
-- [Possible next improvements (nice-to-have)](#possible-next-improvements-nice-to-have)
-- [Contact / Attribution / License](#contact--attribution--license)
-
----
+# Event Manager 
 
 ## Project summary
 This app is a small **Event Manager page (/events)** built inside a **Next-Forge monorepo (`apps/web`)**.  
@@ -35,9 +9,9 @@ UI is a **dark theme**, with a **two-column layout**:
 - Right column → Search + Event List  
 - **Empty state**: shows a Lottie animation  
 - Includes **Clear All (localStorage)** option  
-- Footer with your **name & links**
+- Footer with **name & links**
 
-### File locations (modular components version assumed)
+### File locations (modular components version)
 - `apps/web/store/eventStore.ts`
 - `apps/web/components/EventForm.tsx`
 - `apps/web/components/EventList.tsx`
@@ -55,7 +29,7 @@ UI is a **dark theme**, with a **two-column layout**:
 - **Clear All** button
 - **Dark theme styling** (Tailwind)
 - **Lucide icons** on buttons/inputs
-- **Footer** with your info + links
+- **Footer** with info + links
 
 ---
 
@@ -72,7 +46,7 @@ UI is a **dark theme**, with a **two-column layout**:
 
 ---
 
-## Assumptions & notes about structure
+## Structure
 - App is inside: `apps/web/`
 - Routes: `/app/events/page.tsx → http://localhost:3000/events`
 - Public assets: `apps/web/public/`
