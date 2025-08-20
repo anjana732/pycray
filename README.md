@@ -62,6 +62,21 @@ UI is a **dark theme**, with a **two-column layout**:
 
 ---
 
+## Project Structure
+
+apps/web/
+├── app/
+│ └── events/
+│ └── page.tsx # Main Events Page (2-column layout)
+├── components/
+│ ├── EventForm.tsx # Form for adding events
+│ └── EventList.tsx # Event list, search, clear all, empty state
+├── store/
+│ └── eventStore.ts # Zustand store (persist → localStorage)
+├── public/
+│ └── animations/
+│ └── empty.json # Lottie animation for empty state
+
 ## Install & run (step-by-step)
 
 1. **Clone repo**
@@ -125,3 +140,10 @@ Navigate to: `http://localhost:3000/events`
 `apps/web/public/empty.json`
 
 ### Use in `EventList`:
+
+## 📸 Screenshots
+
+
+## 📜 License
+
+MIT © 2025 Anjana Kumari
