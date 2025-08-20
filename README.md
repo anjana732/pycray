@@ -99,22 +99,19 @@ Navigate to: `http://localhost:3000/events`
 
 ---
 
-## Files & folders — explanation (what-why)
+## Files & folders
 
 ### `store/eventStore.ts`
 - Zustand + persist (localStorage) store.  
 - Provides: `events`, `addEvent`, `removeEvent`, `clearEvents`.  
-- **Why?** Centralized state, persistence, reactivity.
 
 ### `components/EventForm.tsx`
 - Uses `react-hook-form`.  
 - Adds new events `{ id, title, date, description }`.  
-- **Why?** Clean validation & controlled reset.
 
 ### `components/EventList.tsx`
 - Renders events from store.  
 - Includes **search/filter**, **delete per item**, **Clear All**, and **Lottie animation when empty**.  
-- **Why?** Separation of concerns; list logic isolated.
 
 ### `app/events/page.tsx`
 - Renders full two-column UI layout.  
@@ -125,6 +122,6 @@ Navigate to: `http://localhost:3000/events`
 ## Lottie animation: where to put it and how to use it
 
 ### Recommended location
-`apps/web/public/animations/empty.json`
+`apps/web/public/empty.json`
 
 ### Use in `EventList`:
