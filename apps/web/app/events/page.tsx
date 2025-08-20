@@ -207,50 +207,86 @@
 // }
 
 
-"use client";
+// "use client";
 
-import { useEffect, useState } from "react";
-import { useEventStore } from "../../store/eventStore";
-import EventForm from "../../components/EventForm";
-import EventList from "../../components/EventList";
+// import { useEffect, useState } from "react";
+// import { useEventStore } from "../../store/eventStore";
+// import EventForm from "../../components/EventForm";
+// import EventList from "../../components/EventList";
+
+// export default function EventsPage() {
+//   const { events, setEvents } = useEventStore();
+//   const [search, setSearch] = useState("");
+
+//   // Load from localStorage on mount
+//   useEffect(() => {
+//     const stored = localStorage.getItem("events");
+//     if (stored) {
+//       setEvents(JSON.parse(stored));
+//     }
+//   }, [setEvents]);
+
+//   // Save to localStorage whenever events change
+//   useEffect(() => {
+//     localStorage.setItem("events", JSON.stringify(events));
+//   }, [events]);
+
+//   return (
+//     <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-8">
+//       <h1 className="text-2xl font-bold mb-6 text-gray-800">📅 Event Manager</h1>
+
+//       {/* Form */}
+//       <EventForm />
+
+//       {/* Search */}
+//       <div className="w-full max-w-md mt-6">
+//         <input
+//           type="text"
+//           value={search}
+//           onChange={(e) => setSearch(e.target.value)}
+//           placeholder="Search events..."
+//           className="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500 p-2"
+//         />
+//       </div>
+
+//       {/* List */}
+//       <EventList search={search} />
+//     </div>
+//   );
+// }
+
+// apps/web/app/events/page.tsx
+import EventForm from "@/components/EventForm";
+import EventList from "@/components/EventList";
 
 export default function EventsPage() {
-  const { events, setEvents } = useEventStore();
-  const [search, setSearch] = useState("");
-
-  // Load from localStorage on mount
-  useEffect(() => {
-    const stored = localStorage.getItem("events");
-    if (stored) {
-      setEvents(JSON.parse(stored));
-    }
-  }, [setEvents]);
-
-  // Save to localStorage whenever events change
-  useEffect(() => {
-    localStorage.setItem("events", JSON.stringify(events));
-  }, [events]);
-
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col items-center px-4 py-8">
-      <h1 className="text-2xl font-bold mb-6 text-gray-800">📅 Event Manager</h1>
+    <main className="min-h-screen bg-gradient-to-b from-gray-950 to-black text-gray-100 flex flex-col">
+      {/* Header */}
+      <header className="px-6 py-6 border-b border-gray-800 bg-transparent">
+        <div className="max-w-6xl mx-auto flex items-center justify-between">
+          <h1 className="text-2xl font-bold">📅 Event Manager</h1>
+          <p className="text-sm text-gray-400">Dark theme · local-only · Tailwind</p>
+        </div>
+      </header>
 
-      {/* Form */}
-      <EventForm />
+      {/* Content */}
+      <section className="flex-1 max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <EventForm />
+        <EventList />
+      </section>
 
-      {/* Search */}
-      <div className="w-full max-w-md mt-6">
-        <input
-          type="text"
-          value={search}
-          onChange={(e) => setSearch(e.target.value)}
-          placeholder="Search events..."
-          className="w-full rounded-lg border-gray-300 focus:border-blue-500 focus:ring-blue-500 p-2"
-        />
-      </div>
-
-      {/* List */}
-      <EventList search={search} />
-    </div>
+      {/* Footer */}
+      <footer className="border-t border-gray-800 bg-transparent py-6">
+        <div className="max-w-6xl mx-auto text-center text-sm text-gray-400">
+          <div>© {new Date().getFullYear()} Anjana Singh. All rights reserved.</div>
+          <div className="flex items-center justify-center gap-4 mt-2">
+            <a className="hover:text-cyan-400" href="https://github.com/your-github" target="_blank" rel="noreferrer">GitHub</a>
+            <a className="hover:text-cyan-400" href="https://linkedin.com/in/your-linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a className="hover:text-cyan-400" href="https://your-portfolio.com" target="_blank" rel="noreferrer">Portfolio</a>
+          </div>
+        </div>
+      </footer>
+    </main>
   );
 }
