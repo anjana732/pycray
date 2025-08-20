@@ -143,6 +143,9 @@ Navigate to: `http://localhost:3000/events`
 
 ## 📸 Screenshots
 
+![alt text](image.png)
+
+![alt text](image-1.png)
 
 ## 📜 License
 
