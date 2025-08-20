@@ -64,18 +64,18 @@ UI is a **dark theme**, with a **two-column layout**:
 
 ## Project Structure
 
-apps/web/
-├── app/
-│ └── events/
-│ └── page.tsx # Main Events Page (2-column layout)
-├── components/
-│ ├── EventForm.tsx # Form for adding events
-│ └── EventList.tsx # Event list, search, clear all, empty state
-├── store/
-│ └── eventStore.ts # Zustand store (persist → localStorage)
-├── public/
-│ └── animations/
-│ └── empty.json # Lottie animation for empty state
+apps/web/ <br>
+├── app/ <br>
+│ └── events/ <br>
+│ └── page.tsx # Main Events Page (2-column layout) <br>
+├── components/ <br>
+│ ├── EventForm.tsx # Form for adding events <br>
+│ └── EventList.tsx # Event list, search, clear all, empty state <br>
+├── store/ <br>
+│ └── eventStore.ts # Zustand store (persist → localStorage) <br>
+├── public/ <br>
+│ └── animations/ <br>
+│ └── empty.json # Lottie animation for empty state <br>
 
 ## Install & run (step-by-step)
 
@@ -149,6 +149,6 @@ Navigate to: `http://localhost:3000/events`
 
 ## 📜 License
 
-MIT © 2025 Anjana Kumari
-Email: anjanasingh1257@gmail.com
+MIT © 2025 Anjana Kumari <br>
+Email: anjanasingh1257@gmail.com <br>
 Portfolio : [Click to visit Portfolio](https://nextjs-portfolio-rosy-six.vercel.app/)
