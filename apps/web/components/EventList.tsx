@@ -82,7 +82,8 @@ export default function EventList() {
             ) : (
               <div className="w-56 h-56 rounded-lg bg-gray-800 flex items-center justify-center text-gray-500">
                 {/* fallback visual */}
-                <span className="text-2xl">📭</span>
+                {/* <span className="text-2xl">📭</span> */}
+                 <Lottie animationData={require("../public/empty.json")} loop />
               </div>
             )}
             <p className="mt-4 text-gray-400">No events yet — add your first event.</p>
