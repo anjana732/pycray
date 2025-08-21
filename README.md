@@ -139,7 +139,6 @@ Navigate to: `http://localhost:3000/events`
 ### Recommended location
 `apps/web/public/empty.json`
 
-### Use in `EventList`:
 
 ## 📸 Screenshots
 
